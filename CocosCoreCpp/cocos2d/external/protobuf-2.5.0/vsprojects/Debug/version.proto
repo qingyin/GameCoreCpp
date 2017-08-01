@@ -1,0 +1,6 @@
+package pb ;
+
+enum protocol_Version
+{
+	protocol_version = 3;
+}

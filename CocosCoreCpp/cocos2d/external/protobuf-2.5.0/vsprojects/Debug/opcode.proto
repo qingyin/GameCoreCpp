@@ -1,0 +1,59 @@
+package pb ;
+
+enum Opcode
+{
+	/////////////////////////////////////////////////////////////////////////////
+	//大厅消息
+	MSG_PING_PONG			    	= 1;  	//心跳包	
+
+	MSG_LOGIN			 			= 2;  	//登陆大厅
+
+	
+	MSG_JOIN_TABLE      			= 3;  	//加入桌子
+	MSG_JOIN_TABLE_BROADCAST      	= 4;  	//加入桌子广播
+	
+	MSG_LEAVE_TABLE      			= 5;  	//离开桌子
+	MSG_LEAVE_TABLE_BROADCAST      	= 6;  	//离开桌子广播
+
+
+	/////////////////////////////////////////////////////////////////////////////
+	//战斗界面消息
+	MSG_ROUND_START_BROADCAST      	= 101;  //一局开始广播
+
+	MSG_ROUND_RESULT_BROADCAST  	= 102;	//一局结算广播
+
+	MSG_REPLACE    					= 103;	//补牌	
+	MSG_REPLACE_BROADCAST    		= 104;	//补牌广播
+
+	MSG_DISPATCH_BROADCAST    		= 105;	//系统发出一张牌给一个玩家广播		
+
+	//MSG_OUT    						= 105;	//出牌	
+	//MSG_OUT_BROADCAST    			= 106;	//出牌广播
+
+
+
+	//MSG_LISTEN    					= 113;	//听牌	
+	//MSG_LISTEN_BROADCAST    		= 114;	//听牌广播	
+
+	//MSG_OPERATE    					= 115;	//操作（吃碰杠）	
+	//MSG_OPERATE_BROADCAST    		= 116;	//操作广播
+
+	//MSG_CHAT      					= 120;  //聊天
+	//MSG_CHAT_BROADCAST    			= 121;	//聊天广播	
+
+
+
+	/////////////////////////////////////////////////////////////////////////////	
+	MSG_GAME_END					= 999; //分割线
+	
+	// 1000-1999 为social接口
+	MSG_SOCIAL_BEGIN				= 1000; //分割线
+	
+	MSG_SOCIAL_END				   	= 1999; //分割线
+	
+    MSG_NET_BEGIN                 	= 2000; //分割线
+    
+
+    MSG_NET_END                    	= 2010;
+	//10000-20000为服务器内部通信协议Opcode，不可占用
+}

@@ -1,0 +1,29 @@
+package pb ;
+
+enum ErrorCode
+{
+	ERROR_NONE 					= 0;
+    ERROR_SERVER_CLOSING        = 1; //服务器已停服
+    ERROR_SERVER_MAINTAINING    = 2; //服务器维护
+	ERROR_SYSTEM_ERROR			= 5; //系统错误
+	ERROR_BAD_REQUEST 			= 6; //错误请求
+	ERROR_PROTOCOL_UNMATCHED 	= 7; //协议不匹配
+	ERROR_SYSTEM_NOT_UNLOCK		= 8; //对应系统未解锁
+
+ 	ERROR_USER_NOT_LOGIN		= 11;  //用户未登录
+	ERROR_USER_FORBIDDEN		= 12;  //用户被禁止
+	ERROR_USER_WAITING_RESPONSE = 13;  //用户正在等待回应,用于限制每次一条请求
+	
+	ERROR_PLAYER_NOT_EXIST		= 20;  //玩家不存在
+	ERROR_PLAYERNAME_EXIST		= 21;  //玩家已存在
+	ERROR_PLAYER_ALREADY_CREATED = 22;  //玩家已创建
+	ERROR_NICKNAME_INVALID 		= 23; //昵称无效：命名不规范
+	ERROR_PLAYER_NOT_LOGIN		= 24; //玩家未登录
+	ERROR_NICKNAME_EXIST		= 25; //昵称已存在
+	
+
+}
+
+
+
+

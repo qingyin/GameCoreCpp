@@ -1,0 +1,532 @@
+package pb ;
+
+//#####################################################
+//心跳消息，不需要参数
+//#####################################################
+message C2GS_PingPong
+{
+    required int64          uid                     = 1;
+}
+message GS2C_PingPong
+{
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+message C2GS_PingPongAskBroadcast
+{
+}
+message GS2C_PingPongAskBroadcast
+{
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+//#####################################################
+//非游戏部分接口
+//#####################################################
+
+message C2GS_Login
+{
+    required int64          uid                     = 1;
+    required int32          table_id                = 2;                //桌子号  
+}
+
+message GS2C_Login
+{
+    required int32          errorcode               = 1;
+    optional string         session_id              = 2;
+}
+
+////////////////////////////////////////////////////////
+
+//加入桌子
+message C2GS_JoinTable {
+    required int32      table_id                = 1;                //桌子号
+    required int32      seat_id                 = 2;                //椅子号      
+}
+
+//玩家信息
+message UsrInfo {
+    required int64      uid                     = 1;    
+    required string     weichat_nick            = 2;                //微信昵称
+    required string     weichat_face_address    = 3;                //头像地址 
+    required int64      big_gold                = 4;                //房卡
+    required int64      gold                    = 5;                //游戏中的金币数
+    required int32      sex                     = 6;                //性别    
+    required string     ip                      = 7;                //IP地址    
+    required int32      status                  = 8;                //状态 （0自由状态，1ready, 2正在打牌，3断线，4房主退出但未解散房间, 5 打牌中的短暂free，6打牌中的短暂ready）
+    required int32      seatid                  = 9;                //位置   
+}
+
+
+//重连
+message WeaveItem {
+    required int64      weave_kind              = 1;                //吃碰杠后的套牌类型（吃碰杠）
+    repeated int32      cards                   = 2;                //牌数组
+    optional int32      is_angang               = 3;                //操作是否是暗杠操作       
+}
+message ReconnectItem
+{
+    repeated int32      hand_cards              = 1;                //自己手中扑克
+    repeated int32      hand_cnts               = 2;                //所有玩家的手中牌个数数组    
+
+    repeated WeaveItem  weaves1                 = 3;                //自己套牌数组
+    repeated WeaveItem  weaves2                 = 4;                //玩家2套牌数组
+    repeated WeaveItem  weaves3                 = 5;                //玩家3套牌数组
+    repeated WeaveItem  weaves4                 = 6;                //玩家4套牌数组
+
+    repeated int32      dismiss_cards_1         = 7;                //自己丢弃的扑克
+    repeated int32      dismiss_cards_2         = 8;                //玩家2丢弃的扑克
+    repeated int32      dismiss_cards_3         = 9;                //玩家3丢弃的扑克
+    repeated int32      dismiss_cards_4         = 10;                //玩家4丢弃的扑克
+
+    repeated int32      minglou_cards_1         = 11;                //自己明搂的扑克
+    repeated int32      minglou_cards_2         = 12;                //玩家2明搂的扑克
+    repeated int32      minglou_cards_3         = 13;                //玩家3明搂的扑克
+    repeated int32      minglou_cards_4         = 14;                //玩家4明搂的扑克
+
+    optional int32      current_uid             = 15;               //当前玩家
+    optional int32      left_card_cnt           = 16;               //剩余张数
+    optional int32      left_round              = 17;               //剩余局数    
+
+    repeated int32      is_minglous             = 18;               //玩家是否明搂数组[0,1,1,1]表示3个玩家明搂
+    repeated int32      hua_cnts                = 19;               //玩家的花数数组
+    repeated int32      actions                 = 20;               //断线玩家的动作数组    
+}
+
+//加入桌子响应
+message GS2C_JoinTable {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    repeated UsrInfo    usr_info_list           = 2;                //同桌的所有玩家列表（包括旁观者）
+    optional ReconnectItem  reconnect           = 3;                //断线重连 
+    optional int32      banker_uid              = 4;                //房主用户       
+}
+
+////////////////////////////////////////////////////////
+
+//加入桌子广播请求
+message C2GS_JoinTableBroadcast {
+}
+
+
+//加入桌子广播
+message GS2C_JoinTableBroadcast {
+    required int32          errorcode           = 1 [default = 0];  //结果（成功==0）
+    required UsrInfo        usr_info            = 2;                //玩家进入，状态ready
+    optional int32          banker_uid          = 3;                //房主用户 
+}
+
+////////////////////////////////////////////////////////
+
+//某个玩家断线回来了广播请求
+message C2GS_BreakBackBroadcast {
+}
+
+
+//某个玩家断线回来了广播
+message GS2C_BreakBackBroadcast {
+    required int32          errorcode           = 1 [default = 0];  //结果（成功==0）
+    required int32          break_uid           = 2;                //断线玩家 
+}
+
+////////////////////////////////////////////////////////
+
+//离开桌子
+message C2GS_LeaveTable {
+    optional int32      leave_reason            = 1;                //原因 (0正常退出、1解散桌子)
+}
+
+//响应
+message GS2C_LeaveTable {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      leave_reason            = 2;                //原因 (0正常退出、1解散桌子)   
+    optional int32      is_banker_no_dismiss    = 3;                //是否是房主未解散房间     
+}
+
+////////////////////////////////////////////////////////
+
+//离开桌子广播请求
+message C2GS_LeaveTableBroadcast {
+}
+
+
+//离开桌子广播
+message GS2C_LeaveTableBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int64      uid                     = 2;  
+    optional int32      leave_reason            = 3;                //原因 (0正常退出、1解散桌子) 
+    optional int32      is_banker_no_dismiss    = 4;                //是否是房主未解散房间 
+}
+
+////////////////////////////////////////////////////////
+
+//断线广播请求
+message C2GS_BreakBroadcast {
+}
+
+//断线广播
+message GS2C_BreakBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int64      uid                     = 2;  
+}
+
+////////////////////////////////////////////////////////
+
+//#####################################################
+//游戏部分接口
+//#####################################################
+
+//开始补花广播请求，收到后请播放补花动画
+message C2GS_StartReplaceBroadcast {
+}
+
+//补花广播
+message GS2C_StartReplaceBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    repeated int32      replace_uids            = 2;                //补花用户id数组     
+    repeated int32      card_cnt_reals          = 3;                //补花用户手中当前真实的花牌数量 (有可能联系补花)    
+}
+////////////////////////////////////////////////////////
+
+//广播请求
+message C2GS_RoundStartBroadcast {
+}
+
+//游戏一局开始广播
+message GS2C_RoundStartBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      left_round              = 2;                //剩余局数
+    optional int32      left_cnt                = 3;                //剩下的牌数    
+    optional int32      gold_now                = 4;                //当前金币    
+    optional int32      banker_uid              = 5;                //庄家用户 
+    repeated int32      hand_cards              = 6;                //手中扑克数组         
+}
+
+////////////////////////////////////////////////////////
+
+//系统发单张牌请求
+message C2GS_DispatchBroadcast {
+}
+
+//系统发单张牌广播
+message GS2C_DispatchBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      card                    = 2;                //牌     
+    optional int32      dispatch_uid            = 4;                //发牌目标用户 
+    optional int32      left_cnt                = 5;                //剩下的牌数
+    optional int32      is_hu                   = 6;                //是否胡该张牌(明搂用)
+    optional int32      is_gang                 = 7;                //是否杠该张牌(明搂用)        
+}
+
+////////////////////////////////////////////////////////
+
+//出牌请求
+message C2GS_Out {
+    required int32      card                    = 1;                //牌
+}
+
+//出牌响应
+message GS2C_Out {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+////////////////////////////////////////////////////////
+
+//出牌广播请求
+message C2GS_OutBroadcast {
+}
+
+//出牌广播
+message GS2C_OutBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      out_uid                 = 2;                //出牌用户     
+    optional int32      card                    = 3;                //牌  
+}
+
+////////////////////////////////////////////////////////
+
+//操作询问广播请求
+message C2GS_OperateAskBroadcast {
+}
+
+//操作询问广播
+message GS2C_OperateAskBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      resume_uid              = 2;                //点击“过”之后，需要找到的焦点用户        
+    optional int32      action_card             = 3;                //牌
+    repeated int32      actions                 = 4;                //动作数组(0无动作，1左吃（吃的牌在左边），2中吃，3右吃，4碰，5杠，6明搂，7胡) 
+    repeated int32      gang_cards              = 5;                //可杠牌扑克数组         
+}
+
+////////////////////////////////////////////////////////
+
+//操作请求
+message C2GS_Operate {
+    required int32      operate_code            = 1;                //操作代码      (取消写0)
+    repeated int32      operate_cards           = 2;                //操作扑克   （手中要吃碰杠胡所提供的牌，例如：45吃6，返回645） 
+}
+
+//操作结果
+message GS2C_Operate {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      operate_code            = 2;                //操作代码      (取消写0)
+}
+
+
+//操作结果广播请求
+message C2GS_OperateResultBroadcast {
+}
+
+//操作结果广播
+message GS2C_OperateResultBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      operate_uid             = 2;                //操作用户     
+    optional int32      provide_uid             = 3;                //供应用户
+    optional int32      operate_code            = 4;                //操作代码 (上次成功的结果)
+    repeated int32      operate_cards           = 5;                //操作扑克 （手中要吃碰杠胡所提供的牌，例如：45吃6，返回645） 
+    optional int32      is_angang               = 6;                //操作是否是暗杠操作   
+}
+
+////////////////////////////////////////////////////////
+
+//明搂询问可选牌请求 
+message C2GS_MinglouAsk {
+}
+
+//听牌响应
+message GS2C_MinglouAsk {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    repeated int32      can_discard_cards       = 2;                //可选要打出的牌数组        
+}
+
+//明搂请求 
+message C2GS_Minglou {
+}
+
+//听牌响应
+message GS2C_Minglou {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+
+//听牌广播请求
+message C2GS_MinglouBroadcast {
+}
+
+//听牌广播
+message GS2C_MinglouBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      minglou_uid             = 2;                //明搂用户 
+    repeated int32      minglou_cards           = 3;                //明搂听的牌数组                  
+}
+
+////////////////////////////////////////////////////////
+
+//聊天
+message C2GS_Chat {
+    optional int32      chat_index              = 1;
+}
+
+//响应
+message GS2C_Chat {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+////////////////////////////////////////////////////////
+
+//聊天广播请求
+message C2GS_ChatBroadcast {
+}
+
+//聊天广播
+message GS2C_ChatBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int32      uid                     = 2; 
+    required int32      chat_index              = 3;
+}
+
+////////////////////////////////////////////////////////
+
+message ResultItem {
+    required int64      uid                     = 1;
+    repeated int32      hand_cards              = 2;                //手中扑克
+    repeated WeaveItem  weaves                  = 3;                //套牌数组
+    optional int32      gold_change             = 4;                //金币
+    optional int32      gold_total              = 5;                //目前携带金币    
+    optional int32      hua_num                 = 6;                //花的数量             
+}
+
+//广播请求
+message C2GS_RoundResultBroadcast {
+}
+
+//一局结算广播
+message GS2C_RoundResultBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    repeated ResultItem result_list             = 2;
+    optional int32      win_uid                 = 3;                //胡牌者
+    optional int32      provide_uid             = 4;                //放炮者    
+    optional int32      win_fan_cnt             = 5;                //赢的番数       
+    optional string     fan_details             = 6;                //番
+    optional int32      is_minglou              = 7;                //是否明搂
+    optional int32      is_zimo                 = 8;                //是否自摸
+    optional string     rule                    = 9;                //规则                      
+}
+
+////////////////////////////////////////////////////////
+
+message HistoryItem {
+    required int64      action_type             = 1;                //动作类型
+    optional int32      action_uid              = 2;                //动作用户
+    optional int32      provider_uid            = 3;                //提供牌用户    
+    repeated int32      action_cards            = 4;                //牌数组            
+}
+
+//历史记录广播请求
+message C2GS_HistoryBroadcast {
+}
+
+//历史记录广播
+message GS2C_HistoryBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional string     history_name            = 2;                //战绩的名字（tableid+第几局数）    
+    repeated HistoryItem history_list           = 3;           
+}
+
+////////////////////////////////////////////////////////
+
+//解散房间询问广播
+message C2GS_DismissAskBroadcast {
+}
+
+//解散房间询问广播
+message GS2C_DismissAskBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      ask_uid                 = 2;                //请求用户    
+}
+
+////////////////////////////////////////////////////////
+
+
+//解散回答
+message C2GS_DismissAnswer {
+    optional int32      is_agree                = 1;                //是否同意
+}
+
+//解散回答响应
+message GS2C_DismissAnswer {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+////////////////////////////////////////////////////////
+
+//解散回答广播请求
+message C2GS_DismissAnswerBroadcast {
+}
+
+//解散回答广播
+message GS2C_DismissAnswerBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int64      uid                     = 2;                //应答玩家
+    optional int32      is_agree                = 3;                //是否同意    
+}
+
+////////////////////////////////////////////////////////
+
+//解散请求
+message C2GS_DismissBroadcast {
+}
+
+//解散广播
+message GS2C_DismissBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    optional int32      is_dismiss              = 2;                //是否结算      
+}
+
+////////////////////////////////////////////////////////
+
+//语音请求
+message C2GS_VoiceTalk {
+    required bytes     voice_data              = 1; 
+}
+
+//语音响应
+message GS2C_VoiceTalk {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+////////////////////////////////////////////////////////
+
+//语音广播请求
+message C2GS_VoiceTalkBroadcast {
+}
+
+//语音广播
+message GS2C_VoiceTalkBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int64      uid                     = 2;                //说话玩家    
+    required bytes      voice_data              = 3;     
+}
+
+////////////////////////////////////////////////////////
+
+//聊天
+message C2GS_ChatCustom {
+    required string     chat_content           = 1;
+}
+
+//响应
+message GS2C_ChatCustom {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+////////////////////////////////////////////////////////
+
+//聊天广播请求
+message C2GS_ChatCustomBroadcast {
+}
+
+//聊天广播
+message GS2C_ChatCustomBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int32      uid                     = 2; 
+    required string     chat_content            = 3;
+}
+
+////////////////////////////////////////////////////////
+
+//准备请求
+message C2GS_Ready {
+}
+
+//准备响应
+message GS2C_Ready {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+}
+
+////////////////////////////////////////////////////////
+
+//准备广播请求
+message C2GS_ReadyBroadcast {
+}
+
+//准备广播通知
+message GS2C_ReadyBroadcast {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int64      uid                     = 2; 
+}
+
+////////////////////////////////////////////////////////
+
+//准备请求
+message C2GS_GetJuCnt {
+    required int64      uid                     = 2; 
+}
+
+//准备响应
+message GS2C_GetJuCnt {
+    required int32      errorcode               = 1 [default = 0];  //结果（成功==0）
+    required int64      uid                     = 2;     
+    optional int32      ju_win                  = 3;                //胜局 
+    optional int32      ju_draw                 = 4;                //平局 
+    optional int32      ju_lose                 = 5;                //败局        
+}
+
+////////////////////////////////////////////////////////

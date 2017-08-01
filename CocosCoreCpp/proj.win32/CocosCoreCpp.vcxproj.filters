@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{c5df8cbc-dabb-42c8-8a95-fbabe5ebd773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase">
+      <UniqueIdentifier>{0fc89c0f-a89a-41c3-9323-e5e9515f9e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Client">
+      <UniqueIdentifier>{8e3d4b41-b414-4b38-b262-3b99b4fcb64c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\GameNet">
+      <UniqueIdentifier>{c554e7b2-c957-479c-b519-da0ec84a4037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\Sound">
+      <UniqueIdentifier>{3739cc00-2f37-45d0-a021-91a73e441268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\DB">
+      <UniqueIdentifier>{811e8529-89f8-450d-9a63-beadb100f8e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Facade">
+      <UniqueIdentifier>{c5f6135b-3a35-49fe-9f8d-135451da0645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Network">
+      <UniqueIdentifier>{b2a2d697-2809-49ec-aa6b-cae537fec87b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Platform">
+      <UniqueIdentifier>{fbf325fe-26db-47af-801f-c2903926838f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Tools">
+      <UniqueIdentifier>{500466ce-8bb7-4c68-b2dd-11b29d73308d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Utils">
+      <UniqueIdentifier>{356d7cf3-4bff-41db-968f-06fa32e61eef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\FV">
+      <UniqueIdentifier>{ba4fd5ef-6eca-48c9-afb5-fbefcaa1d69d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\Scence">
+      <UniqueIdentifier>{d1603c4b-4ab4-4757-86a5-51019df76fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Client\Scence">
+      <UniqueIdentifier>{4502a339-c0bd-4f74-8457-727f7dbffe26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\ViewTest">
+      <UniqueIdentifier>{b8fa5904-a0a1-48ea-965b-d45852559195}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\WidgetEx">
+      <UniqueIdentifier>{8076c0ed-d9e4-4892-a1e2-bce4102db8d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\JniCross">
+      <UniqueIdentifier>{c9f9b9a7-2e9e-4bf9-b2a5-49786efb3644}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\Game">
+      <UniqueIdentifier>{d353ab44-be3f-4aef-878d-29077a2261b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\Tools">
+      <UniqueIdentifier>{d763f9b2-1094-4cc1-a7e8-aa5cec8f399c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameBase\GameNet\cocosHttp">
+      <UniqueIdentifier>{a362c433-21f7-45c5-93e5-5e66b0cab825}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Client\ViewTest">
+      <UniqueIdentifier>{4443a7dc-6394-441d-991d-fc9bd04e4c23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Scence">
+      <UniqueIdentifier>{599ab1b9-28db-4b9e-a546-7463a7769a3c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Tools\CCUserDefault.cpp">
+      <Filter>src\Core\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Tools\Convert.cpp">
+      <Filter>src\Core\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Tools\Encrypt.cpp">
+      <Filter>src\Core\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Tools\MD5.cpp">
+      <Filter>src\Core\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Network\NWHttpClient.cpp">
+      <Filter>src\Core\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Client\Scence\GameBaseTestScene.cpp">
+      <Filter>src\Client\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\Scence\GameBaseScene.cpp">
+      <Filter>src\GameBase\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Client\Scence\ClientScene.cpp">
+      <Filter>src\Client\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Client\Scence\HelloWorldScene.cpp">
+      <Filter>src\Client\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\WidgetEx\LayerEx.cpp">
+      <Filter>src\GameBase\WidgetEx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\ViewTest\HttpClientTestView.cpp">
+      <Filter>src\GameBase\ViewTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Network\HttpManager.cpp">
+      <Filter>src\Core\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\GameNet\BLLHttpTest.cpp">
+      <Filter>src\GameBase\GameNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\JniCross\JniCallback.cpp">
+      <Filter>src\GameBase\JniCross</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\JniCross\JniFun.cpp">
+      <Filter>src\GameBase\JniCross</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\Game\MissionWeiXin.cpp">
+      <Filter>src\GameBase\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\Tools\ActionEx.cpp">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\Tools\utility.cpp">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\GameNet\MCWebReq.cpp">
+      <Filter>src\GameBase\GameNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\GameNet\cocosHttp\HttpClientEx.cpp">
+      <Filter>src\GameBase\GameNet\cocosHttp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\Tools\ScriptData.cpp">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\Tools\ScriptXMLparse.cpp">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\WidgetEx\SpriteBlur.cpp">
+      <Filter>src\GameBase\WidgetEx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Client\ViewTest\WXLoginTest.cpp">
+      <Filter>src\Client\ViewTest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Network\DownloaderTest.cpp">
+      <Filter>src\Core\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Core\Scence\CoreScene.cpp">
+      <Filter>src\Core\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameBase\JniCross\JniUtil.cpp">
+      <Filter>src\GameBase\JniCross</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Tools\CCUserDefault.h">
+      <Filter>src\Core\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Tools\Convert.h">
+      <Filter>src\Core\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Tools\Encrypt.h">
+      <Filter>src\Core\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Tools\MD5.h">
+      <Filter>src\Core\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Tools\ToolsHeader.h">
+      <Filter>src\Core\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\FV\FvSingleton.h">
+      <Filter>src\Core\FV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Network\NWHttpClient.h">
+      <Filter>src\Core\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Client\Scence\GameBaseTestScene.h">
+      <Filter>src\Client\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Scence\GameBaseScene.h">
+      <Filter>src\GameBase\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Client\Scence\ClientScene.h">
+      <Filter>src\Client\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Client\Scence\HelloWorldScene.h">
+      <Filter>src\Client\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\WidgetEx\LayerEx.h">
+      <Filter>src\GameBase\WidgetEx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\ViewTest\HttpClientTestView.h">
+      <Filter>src\GameBase\ViewTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Network\HttpManager.h">
+      <Filter>src\Core\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\GameNet\BLLHttpTest.h">
+      <Filter>src\GameBase\GameNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\JniCross\JniCallback.h">
+      <Filter>src\GameBase\JniCross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\JniCross\JniFun.h">
+      <Filter>src\GameBase\JniCross</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Game\MissionWeiXin.h">
+      <Filter>src\GameBase\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Tools\ActionEx.h">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Tools\StructType.h">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Tools\utility.h">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Tools\UtilityBase.h">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\GameNet\MCWebReq.h">
+      <Filter>src\GameBase\GameNet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\GameNet\cocosHttp\HttpClientEx.h">
+      <Filter>src\GameBase\GameNet\cocosHttp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\GameNet\cocosHttp\HttpRequestEx.h">
+      <Filter>src\GameBase\GameNet\cocosHttp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\GameNet\cocosHttp\HttpResponseEx.h">
+      <Filter>src\GameBase\GameNet\cocosHttp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Tools\ScriptData.h">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\Tools\ScriptXMLparse.h">
+      <Filter>src\GameBase\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\WidgetEx\SpriteBlur.h">
+      <Filter>src\GameBase\WidgetEx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Client\ViewTest\WXLoginTest.h">
+      <Filter>src\Client\ViewTest</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Network\DownloaderTest.h">
+      <Filter>src\Core\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\Scence\CoreScene.h">
+      <Filter>src\Core\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameBase\JniCross\JniUtil.h">
+      <Filter>src\GameBase\JniCross</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

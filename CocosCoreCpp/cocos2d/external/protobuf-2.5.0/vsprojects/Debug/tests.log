@@ -1,0 +1,124 @@
+﻿生成启动时间为 2017/3/25 10:26:37。
+     1>项目“E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\vsprojects\tests.vcxproj”在节点 4 上(Build 个目标)。
+     1>CustomBuild:
+         Generating cpp_test_bad_identifiers.pb.{h,cc}...
+         Generating unittest.pb.{h,cc}...
+         Generating unittest_custom_options.pb.{h,cc}...
+         Generating unittest_embed_optimize_for.pb.{h,cc}...
+         Generating unittest_import.pb.{h,cc}...
+         Generating unittest_import_public.pb.{h,cc}...
+         Generating unittest_lite_imports_nonlite.pb.{h,cc}...
+         Generating unittest_mset.pb.{h,cc}...
+         Generating unittest_optimize_for.pb.{h,cc}...
+         Generating unittest_no_generic_services.pb.{h,cc}...
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I../src /I. /I../gtest/include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _VARIADIC_MAX=10 /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt /wd4244 /wd4267 /wd4018 /wd4355 /wd4800 /wd4251 /wd4996 /wd4146 /wd4305 ..\src\google\protobuf\io\coded_stream_unittest.cc ..\src\google\protobuf\compiler\command_line_interface_unittest.cc ..\src\google\protobuf\stubs\common_unittest.cc ..\src\google\protobuf\compiler\cpp\cpp_bootstrap_unittest.cc ..\src\google\protobuf\compiler\cpp\cpp_unittest.cc google\protobuf\compiler\cpp\cpp_test_bad_identifiers.pb.cc ..\src\google\protobuf\compiler\cpp\cpp_plugin_unittest.cc ..\src\google\protobuf\compiler\java\java_plugin_unittest.cc ..\src\google\protobuf\compiler\java\java_doc_comment_unittest.cc ..\src\google\protobuf\compiler\python\python_plugin_unittest.cc ..\src\google\protobuf\descriptor_database_unittest.cc ..\src\google\protobuf\descriptor_unittest.cc ..\src\google\protobuf\dynamic_message_unittest.cc ..\src\google\protobuf\extension_set_unittest.cc ..\src\google\protobuf\generated_message_reflection_unittest.cc ..\src\google\protobuf\testing\googletest.cc ..\src\google\protobuf\compiler\importer_unittest.cc ..\src\google\protobuf\message_unittest.cc ..\src\google\protobuf\stubs\once_unittest.cc ..\src\google\protobuf\compiler\parser_unittest.cc ..\src\google\protobuf\io\printer_unittest.cc ..\src\google\protobuf\reflection_ops_unittest.cc ..\src\google\protobuf\repeated_field_unittest.cc ..\src\google\protobuf\repeated_field_reflection_unittest.cc ..\src\google\protobuf\stubs\structurally_valid_unittest.cc ..\src\google\protobuf\stubs\stringprintf_unittest.cc ..\src\google\protobuf\stubs\template_util_unittest.cc ..\src\google\protobuf\stubs\type_traits_unittest.cc ..\src\google\protobuf\stubs\strutil_unittest.cc ..\src\google\protobuf\test_util.cc ..\src\google\protobuf\text_format_unittest.cc ..\src\google\protobuf\io\tokenizer_unittest.cc google\protobuf\unittest.pb.cc google\protobuf\unittest_custom_options.pb.cc google\protobuf\unittest_embed_optimize_for.pb.cc google\protobuf\unittest_import.pb.cc google\protobuf\unittest_import_public.pb.cc google\protobuf\unittest_lite_imports_nonlite.pb.cc google\protobuf\unittest_mset.pb.cc google\protobuf\unittest_optimize_for.pb.cc google\protobuf\unittest_no_generic_services.pb.cc ..\src\google\protobuf\unknown_field_set_unittest.cc ..\src\google\protobuf\wire_format_unittest.cc ..\src\google\protobuf\io\zero_copy_stream_unittest.cc
+         zero_copy_stream_unittest.cc
+         wire_format_unittest.cc
+         unknown_field_set_unittest.cc
+         unittest_no_generic_services.pb.cc
+         unittest_optimize_for.pb.cc
+         unittest_mset.pb.cc
+         unittest_lite_imports_nonlite.pb.cc
+         unittest_import_public.pb.cc
+         unittest_import.pb.cc
+         unittest_embed_optimize_for.pb.cc
+         unittest_custom_options.pb.cc
+         unittest.pb.cc
+         tokenizer_unittest.cc
+         text_format_unittest.cc
+         test_util.cc
+         strutil_unittest.cc
+         type_traits_unittest.cc
+         template_util_unittest.cc
+         stringprintf_unittest.cc
+         structurally_valid_unittest.cc
+         正在生成代码...
+         正在编译...
+         repeated_field_reflection_unittest.cc
+         repeated_field_unittest.cc
+         reflection_ops_unittest.cc
+         printer_unittest.cc
+         parser_unittest.cc
+         once_unittest.cc
+         message_unittest.cc
+         importer_unittest.cc
+         googletest.cc
+         generated_message_reflection_unittest.cc
+         extension_set_unittest.cc
+         dynamic_message_unittest.cc
+         descriptor_unittest.cc
+         descriptor_database_unittest.cc
+         python_plugin_unittest.cc
+         java_doc_comment_unittest.cc
+         java_plugin_unittest.cc
+         cpp_plugin_unittest.cc
+         cpp_test_bad_identifiers.pb.cc
+         cpp_unittest.cc
+         正在生成代码...
+         正在编译...
+         cpp_bootstrap_unittest.cc
+         common_unittest.cc
+     1>e:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\src\google\protobuf\stubs\common_unittest.cc(75): warning C4307: “+”: 整型常量溢出
+     1>e:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\src\google\protobuf\stubs\common_unittest.cc(76): warning C4307: “+”: 整型常量溢出
+         command_line_interface_unittest.cc
+         coded_stream_unittest.cc
+         正在生成代码...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Debug\tests.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"Debug\tests.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Debug\tests.lib" /MACHINE:X86 /SAFESEH Debug\coded_stream_unittest.obj
+         Debug\command_line_interface_unittest.obj
+         Debug\mock_code_generator.obj
+         Debug\common_unittest.obj
+         Debug\cpp_bootstrap_unittest.obj
+         Debug\cpp_unittest.obj
+         Debug\cpp_test_bad_identifiers.pb.obj
+         Debug\cpp_plugin_unittest.obj
+         Debug\java_plugin_unittest.obj
+         Debug\java_doc_comment_unittest.obj
+         Debug\python_plugin_unittest.obj
+         Debug\descriptor_database_unittest.obj
+         Debug\descriptor_unittest.obj
+         Debug\dynamic_message_unittest.obj
+         Debug\extension_set_unittest.obj
+         Debug\file.obj
+         Debug\generated_message_reflection_unittest.obj
+         Debug\googletest.obj
+         Debug\importer_unittest.obj
+         Debug\message_unittest.obj
+         Debug\once_unittest.obj
+         Debug\parser_unittest.obj
+         Debug\printer_unittest.obj
+         Debug\reflection_ops_unittest.obj
+         Debug\repeated_field_unittest.obj
+         Debug\repeated_field_reflection_unittest.obj
+         Debug\structurally_valid_unittest.obj
+         Debug\stringprintf_unittest.obj
+         Debug\template_util_unittest.obj
+         Debug\type_traits_unittest.obj
+         Debug\strutil_unittest.obj
+         Debug\test_util.obj
+         Debug\text_format_unittest.obj
+         Debug\tokenizer_unittest.obj
+         Debug\unittest.pb.obj
+         Debug\unittest_custom_options.pb.obj
+         Debug\unittest_embed_optimize_for.pb.obj
+         Debug\unittest_import.pb.obj
+         Debug\unittest_import_public.pb.obj
+         Debug\unittest_lite_imports_nonlite.pb.obj
+         Debug\unittest_mset.pb.obj
+         Debug\unittest_optimize_for.pb.obj
+         Debug\unittest_no_generic_services.pb.obj
+         Debug\unknown_field_set_unittest.obj
+         Debug\wire_format_unittest.obj
+         Debug\zero_copy_stream_unittest.obj
+         "E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\gtest\msvc\protobuf\Debug\gtestd.lib"
+         "E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\gtest\msvc\protobuf\Debug\gtest_maind.lib"
+         "E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\vsprojects\Debug\libprotobuf.lib"
+         "E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\vsprojects\Debug\libprotoc.lib"
+     1>coded_stream_unittest.obj : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/SAFESEH”规范)
+         tests.vcxproj -> E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\vsprojects\Debug\tests.exe
+     1>已完成生成项目“E:\svn\laiyamajiang\cocos2d\external\protobuf-2.5.0\vsprojects\tests.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:49.50
